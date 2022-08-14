@@ -1,0 +1,19 @@
+server:
+  port: 1010
+spring:
+  application:
+    name: user-server
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:1111
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848	#注册中心地址
+      config:
+        server-addr: 127.0.0.1:8848 #配置中心
+        file-extension: yaml       #配置文件格式
+        prefix: application-user    #配置前缀 ，默认使用sring.application.name
+        group: DEFAULT_GROUP   #默认分组
+  profiles:
+    active: dev  #环境
